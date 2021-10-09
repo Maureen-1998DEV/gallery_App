@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'mygallery.apps.Mygallery',
+    'bootstrap5',
 ]
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
