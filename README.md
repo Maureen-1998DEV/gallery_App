@@ -47,7 +47,7 @@ Activate virtual environment using python3.8 as default handler
 Install dependancies that will create an environment for the app to run `pip3 install -r requirements.txt`
 ####  Create the Database
     - psql
-    - CREATE DATABASE gallery;
+    - CREATE DATABASE mygallery;
 ####  .env file
 Create .env file and paste paste the following filling where appropriate:
 
