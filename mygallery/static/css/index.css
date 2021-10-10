@@ -191,7 +191,7 @@ div.container.imageloc{
     padding-top: 40px;
 }
 .banner{
-background: url(../images/landing2.jpg) no-repeat 0px 0px;
+background: url(../images/banner.jpg) no-repeat 0px 0px;
 background-size:cover;
 background-position: center;
 -webkit-background-size: cover;
@@ -212,7 +212,7 @@ min-height: 400px;
     background: rgba(0,0,0,0.8)
 }
 .banner-1{
-background: url(../images/landing2.jpg) no-repeat 0px 0px;
+background: url(../images/banner.jpg) no-repeat 0px 0px;
 background-size:cover;
 background-position: center;
 -webkit-background-size: cover;
@@ -226,7 +226,7 @@ min-height: 250px;
     color: #fff;
     font-weight: 600;
     padding: 0.8em 2em;
-    background:#d18a19;
+    background:#03123b;
 }
 .banner a:hover {
     color: #fff;
