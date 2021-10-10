@@ -1,5 +1,5 @@
 # Projects Name:
-##  MyGallery
+##  MyGallery_App
 
 ## Contributors
     - Maureen Ougo
