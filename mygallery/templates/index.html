@@ -1,1 +1,26 @@
 {%extends 'base.html'%}
+{% load static%}
+{% block content %}
+
+{{block.super}}
+
+<div class="banner">
+    <div class="cover">
+        <div class="container image">
+            <h2 id="category">If you can't make it good, at least make it look good.</h2>
+            <form class="form" role="search" action="{% url '' %}">
+
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="&#xf3ee; Search by category" name="image_category">
+                  <br>
+                 </div>
+
+                 <small>Trending searches: fashion, travel</small>
+
+              </form>
+            <p>Taking an image, freezing a moment, reveals how rich reality truly is </p>
+            <a href="#gallery">VIEW GALLERY</a>
+        </div>
+    </div>
+</div>
+{%endblock%}
