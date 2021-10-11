@@ -4,10 +4,12 @@
 
 {{block.super}}
 
+
+<!-- Landing Page -->
 <div class="banner">
     <div class="cover">
         <div class="container image">
-            <h2 id="category">take a picture, show your skills.</h2>
+            <h2 id="category">If you can't make it good, at least make it look good.</h2>
             <form class="form" role="search" action="{% url 'search' %}">
 
                 <div class="input-group">
@@ -15,11 +17,11 @@
                   <br>
                  </div>
 
-                 <small>Trending searches: food, fashion</small>
+                 <small>Trending searches: fashion, travel</small>
 
               </form>
-            <p>your photos, your passion, your world </p>
-            <a href="#gallery" button type="button" class="btn btn-info">view gallery</a></button>
+            <p>Taking an image, freezing a moment, reveals how rich reality truly is </p>
+            <a href="#gallery">VIEW GALLERY</a>
         </div>
     </div>
 </div>
@@ -49,7 +51,7 @@
             <img src="{% static 'images/sorry.png' %}" alt="" class="oops">
         </div>
         <div class="col-sm-6 col-md-6 col-lg-6">
-            <h2 class="text-center"> Sorry no images for the category or Location</h2>
+            <h2 class="text-center"> Sorry no images for now they are comming soon.</h2>
         </div>
     </div>
     {% endfor %}
@@ -68,14 +70,14 @@
                     <div class="modal-body">
                         <div class="row">
                             <div class="col-md-9 col-lg-9">
-                                <a href="{% url 'single' category_name=image.image_category.name image_id=image.id %}"><img id="img{{image.id}}" src="{{image.picture.cdn_url}}" class="img-thumbnail" alt="Image" style="cursor:pointer"></a>
+                                <a href="{% url 'single' category=image.categories.name image_id=image.id %}"><img id="img{{image.id}}" src="{{image.picture.cdn_url}}" class="img-thumbnail" alt="Image" style="cursor:pointer"></a>
 
                             </div>
                             <div class="col-md-3">
                                 <h4 class = "desc">Location</h4>
-                                <p>{{image.image_location.name}}</p>
+                                <p>{{image.location.name}}</p>
                                 <h4 class = "desc">Category</h4>
-                                <p>{{image.image_category.name}}</p>
+                                <p>{{image.categories.name}}</p>
                             </div>
                             <div>
                                 <h2 class="desc">{{image.name}}</h2>
@@ -85,6 +87,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" onclick="copy('img{{image.id}}')">Copy Link</button>
+                        
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     </div>
                 </div>
@@ -93,5 +96,4 @@
     {% endfor %}
 </div>
 
-
-{%endblock%}
+{% endblock %}

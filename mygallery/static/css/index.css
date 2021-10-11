@@ -131,13 +131,7 @@ div.navbar-nav.ml-auto{
 .social-buttons a:hover {
     color: #d18a19;
 }
-.abt{
-    margin: 5px 50px ;
-    text-align: center;
-}
-.text-muted.abt{
-    font-size: 15px;
-}
+
 
 /* End of Navbar Styles */
 
