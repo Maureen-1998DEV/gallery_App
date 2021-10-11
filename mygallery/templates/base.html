@@ -21,11 +21,34 @@
 <body>
     {% include "navbar.html" %}
 
-    {% block content %} <h1 class='text-center'></h1> {%endblock%}
 
     {% block scripts %}
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-     {% bootstrap_javascript %}
-    {% endblock %}
-</body>
+    <script>
+      function myFunction() {
+        var copyText = document.getElementById("link");
+        copyText.select();
+        document.execCommand("Copy");
+        alert("Copied : " + copyText.value);
+      }
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script>
+    function copy(ids) {
+        var textCopied = document.getElementById(ids);
+        text = textCopied.src;
+        var elementary = document.createElement("input");
+        document.body.appendChild(elementary);
+        elementary.setAttribute('value', text);
+        elementary.select();
+        document.execCommand("copy");
+        document.body.removeChild(elementary);
+        alert("Copied: " + textCopied.src);
+    }
+    
+    </script>
+
+{%endblock%}
+  </body>
 </html>
