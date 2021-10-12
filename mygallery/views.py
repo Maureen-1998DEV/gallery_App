@@ -23,13 +23,25 @@ def single(request,category_name,image_id):
 
 
 
-def location(request,location):
-    locations = Location.objects.all()
-    selected_location = Location.objects.get(id = location)
-    images = Image.objects.filter(location = selected_location.id)
-    return render(request, 'location.html', {"location":selected_location,"locations":locations,"images":images})
+# def location(request,location):
+#     locations = Location.objects.all()
+#     selected_location = Location.objects.get(id = location)
+#     images = Image.objects.filter(location = selected_location.id)
+#     return render(request, 'location.html', {"location":selected_location,"locations":locations,"images":images})
 
-
+def search_location(request):
+    if 'location' in request.GET and request.GET["location"]:
+        search_term = request.GET.get("location")
+        category = Location.objects.filter (name = search_term)
+        print()
+        searched_images = Image.filter_by_location(category[0])
+        print(searched_images)
+        messages = f'{search_term}'
+        return render(request,'location.html',{"images":searched_images,'messages':messages})
+    else :
+        messages="That location does not exist"
+        return render(request,'location.html',{'messages':messages})
+ 
 
 def search(request):
     if 'category' in request.GET and request.GET["category"]:
@@ -43,3 +55,4 @@ def search(request):
     else :
         messages="That Category does not exist"
         return render(request,'search.html',{'messages':messages})
+

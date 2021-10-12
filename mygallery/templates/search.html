@@ -9,15 +9,18 @@
         {% if images%}
         <h2>Found {{ images|length}} images for searched term {{messages}}</h2>
         {% else %}
-        <h2>Found 0 articles for the search term {{messages}}</h2>
+        <h2>Found 0 image for the search term {{messages}}</h2>
         {% endif %}
         <div class="container imageloc">
             <form class="form" role="search" action="{% url 'search' %}">
                 <div class="input-group">
-                  <input type="text" class="form-control" placeholder="&#xf3ee; Search by categories"name="categories">
+                  <input type="text" class="form-control" placeholder="&#xf3ee; Search by category"name="category">
                   <br>
                  </div>
                  <small>Trending searches: fashion, travel</small>
+                 <br>
+                 <br>
+                 <button  type="submit" class="btn btn-success">view Gallery</button>
               </form>
         </div>
     </div>

@@ -31,7 +31,7 @@ class Location(models.Model):
 
 
     @classmethod
-    def search_by_location(cls,search_id):
+    def filter_by_location(cls,search_id):
         images = cls.objects.filter(location = search_id)
         
         return images
