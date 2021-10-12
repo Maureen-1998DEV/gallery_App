@@ -34,5 +34,12 @@ def location(request,location):
 def search(request):
     if 'category' in request.GET and request.GET["category"]:
         search_term = request.GET.get("category")
-        searched_images = Image.search_by_category(search_term)
-    return render(request,'search.html',{"images":searched_images,"category":search_term})
+        category = categories.objects.filter (name = search_term)
+        print(category)
+        searched_images = Image.search_by_category(category[0])
+        print(searched_images)
+        messages = f'{search_term}'
+        return render(request,'search.html',{"images":searched_images,"category":search_term,'messages':messages})
+    else :
+        messages="That Category does not exist"
+        return render(request,'search.html',{'messages':messages})

@@ -1,5 +1,6 @@
 from django.db import models
-from cloudinary.models import CloudinaryField
+
+
 class categories(models.Model):
     name = models.CharField(max_length=30)
 
@@ -28,12 +29,19 @@ class Location(models.Model):
     def __str__(self):
         return self.name
 
+
+    @classmethod
+    def search_by_location(cls,search_id):
+        images = cls.objects.filter(location = search_id)
+        
+        return images
+
 # Create your models here.
 class Image(models.Model):
     title = models.CharField(max_length=20)
     description = models.TextField()
     location = models.ForeignKey(Location,on_delete=models.CASCADE)
-    categories = models.ManyToManyField(categories)
+    categories = models.ForeignKey(categories,on_delete=models.CASCADE,default = 1)
     image_url = models.ImageField(upload_to = 'images/',blank=True)
 
 
@@ -52,13 +60,10 @@ class Image(models.Model):
         return images
 
     @classmethod
-    def search_by_category(cls,search_term):
-        images = cls.objects.filter(categories__name__contains = search_term)
-        if len(images) < 1:
-            case_images = cls.objects.filter(categories__name__contains = search_term.capitalize())
-            return case_images
-        else:
-            return images
+    def search_by_category(cls,search_id):
+        images = cls.objects.filter(categories = search_id)
+        
+        return images
     @classmethod
     def get_image_by_id(cls,id):
         image = cls.objects.get(id = id)

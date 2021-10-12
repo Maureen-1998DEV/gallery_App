@@ -37,7 +37,7 @@
             <a class="nav-link" href="/#categories">Categories</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link open-nav" style="cursor:pointer">LOCATION</a>
+            <a class="nav-link open-nav" href="/#location">LOCATION</a>
 
           </li>
         </ul>
@@ -53,52 +53,4 @@
       </div>
     </div>
   </nav>
-  <div id="sideNav" class="nav-side">
-    <a href="javascript:void(0)" class="close-nav">&times;</a>
-    <a>Locations:</a>
-    {% for location in locations %}
-    <a href="{% url 'location' location.id}">{{location.name}}</a>
-    {% empty %}
-    <a href="#">There are no locations</a>
-    {% endfor %}
-    <hr>
-    <div class="locations">
-    </div>
-    <div class="footer">
-        <div class="row">
-            <div class="col-md-12 social-buttons">
-                <ul class="list-inline">
-                    <li class="list-inline-item">
-                        <a
-                            href="https://twitter.com/Maureen Ougo" target="_blank">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a class="tooltip-test" title="follow me"
-                            href="https://www.facebook.com/Maureen Ougo" target="_blank">
-                            <i class="fab fa-facebook"></i>
-                        </a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a class="tooltip-test" title="follow me"
-                            href="https://github.com/Maureen-1998DEV" target="_blank">
-                            <i class="fab fa-github"></i>
-                        </a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a class="tooltip-test" title="follow me"
-                            href="#" target="_blank">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-md-12">
-                <p>Copyright &copy; 2018 All Rights Reserved</p>
-            </div>
-        </div>
-    </div>
-</div>
-</body>
-</html>
+  
