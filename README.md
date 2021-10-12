@@ -17,7 +17,7 @@ MyGallery is my first project of django it showcases pictures in category ,locat
 - Admin can upload images from a django dashboard
 
 ## View Live Site here
-View the complete site [here]()
+View the complete site [here](https://ougo-gallery.herokuapp.com/)
 
 ## Technologies Used
     - Python 3.8
