@@ -1,5 +1,5 @@
 from django.db import models
-
+from cloudinary.models import CloudinaryField
 class categories(models.Model):
     name = models.CharField(max_length=30)
 
